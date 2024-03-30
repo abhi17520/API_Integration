@@ -1,0 +1,27 @@
+<!-- phoneNumberInput.html -->
+<template>
+    <lightning-card title="Input Details">
+        <div class="slds-p-around_medium">
+            <!-- Phone Number Input -->
+            <lightning-input label="Enter Phone Number" value={phoneNumber} onchange={handlePhoneInputChange}></lightning-input>
+            <template if:true={showPhoneError}>
+                <p class="slds-text-color_error">Invalid Phone Number!</p>
+            </template>
+            
+            <!-- PAN Number Input -->
+            <lightning-input label="Enter PAN Number" value={panNumber} onchange={handlePanInputChange}></lightning-input>
+            <template if:true={showPanError}>
+                <p class="slds-text-color_error">Invalid PAN Number!</p>
+            </template>
+
+            <!-- Address Input -->
+            <lightning-input label="Enter Address" value={address} onchange={handleAddressInputChange}></lightning-input>
+            <template if:true={showAddressError}>
+                <p class="slds-text-color_error">Address should be in English only!</p>
+            </template>
+            
+            <!-- Submit Button -->
+            <lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
